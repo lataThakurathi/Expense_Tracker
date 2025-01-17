@@ -1,0 +1,151 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffebee;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Heading for Transactions */
+h2 {
+    color: #3f51b5;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Transactions Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+    table th {
+        background-color: #4caf50; /* Green color */
+        color: white;
+        text-align: left;
+        padding: 12px;
+        font-size: 0.95rem;
+        font-weight: bold;
+    }
+
+    table td {
+        padding: 12px;
+        border: 1px solid #f0f2f5;
+        font-size: 0.95rem;
+        color: #555;
+        background-color: #f1f8e9;
+    }
+
+    table tbody tr:nth-child(even) {
+        background-color: #c8e6c9;
+    }
+
+/* Action Buttons */
+button.edit-btn, button.delete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button.edit-btn {
+    background-color: #ff9800; /* Orange color */
+    color: white;
+}
+
+button.delete-btn {
+    background-color: #e91e63; /* Pink color */
+    color: white;
+    margin-left: 10px;
+}
+
+button.edit-btn:hover {
+    background-color: #ff5722;
+    transform: scale(1.05);
+}
+
+button.delete-btn:hover {
+    background-color: #d81b60;
+    transform: scale(1.05);
+}
+
+/* Filter and Sort Section (Below Transactions) */
+.filter-sort-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    margin-top: 40px;
+}
+
+    .filter-sort-container h3 {
+        font-size: 1.8em;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 15px;
+        background-image: linear-gradient(45deg, #ff8a80, #ff5252);
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+.filter-sort-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-sort-item {
+    flex: 1;
+    min-width: 250px;
+}
+
+    .filter-sort-item label {
+        font-size: 1.1rem;
+        color: #333;
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    .filter-sort-item input, .filter-sort-item select {
+        padding: 12px 15px;
+        border: 1px solid #ff4081;
+        border-radius: 8px;
+        width: 100%;
+        font-size: 1.1rem;
+        background-color: #fce4ec;
+    }
+
+.filter-sort-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .filter-sort-actions button {
+        background-color: #3f51b5;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+
+        .filter-sort-actions button:hover {
+            background-color: #303f9f;
+            transform: scale(1.1);
+        }

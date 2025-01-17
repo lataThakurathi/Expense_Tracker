@@ -1,0 +1,93 @@
+@page "/dashboard"
+@using ExpenseTracker.Services
+@inject UserService UserService
+@inject NavigationManager NavigationManager
+
+
+
+
+<link href="css/dashboard.css" rel="stylesheet" />
+
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Expense Tracker</h3>
+        <ul>
+            <li><button class="nav-button @(CurrentView == "Home" ? "active" : "")" @onclick="ShowHome">Home</button></li>
+            <li><button class="nav-button @(CurrentView == "Dashboard" ? "active" : "")" @onclick="ShowDashboard">Dashboard</button></li>
+            <li><button class="nav-button @(CurrentView == "CashInFlow" ? "active" : "")" @onclick="ShowCashInFlow">Cash In Flow</button></li>
+            <li><button class="nav-button @(CurrentView == "CashOutFlow" ? "active" : "")" @onclick="ShowCashOutFlow">Cash Out Flow</button></li>
+            <li><button class="nav-button @(CurrentView == "Debt" ? "active" : "")" @onclick="ShowDebt">Debt</button></li>
+            <li><button class="nav-button @(CurrentView == "Transactions" ? "active" : "")" @onclick="ShowTransactions">Transactions</button></li>
+            <li><button class="logout-btn" @onclick="Logout">Logout</button></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+        @if (CurrentView == "Home")
+        {
+            <HomeComponent />
+        }
+        else if (CurrentView == "Dashboard")
+        {
+            <DashboardComponent />
+        }
+        else if (CurrentView == "CashInFlow")
+        {
+            <CashInFlowComponent />
+        }
+        else if (CurrentView == "CashOutFlow")
+        {
+            <CashOutFlowComponent />
+        }
+        else if (CurrentView == "Debt")
+        {
+            <DebtComponent />
+        }
+        else if (CurrentView == "Transactions")
+        {
+            <TransactionComponent />
+        }
+    </div>
+</div>
+
+@code {
+    private string CurrentView = "Home";
+
+    private void ShowHome()
+    {
+        CurrentView = "Home";
+    }
+
+    private void ShowDashboard()
+    {
+        CurrentView = "Dashboard";
+    }
+
+    private void ShowCashInFlow()
+    {
+        CurrentView = "CashInFlow";
+    }
+
+    private void ShowCashOutFlow()
+    {
+        CurrentView = "CashOutFlow";
+    }
+
+    private void ShowDebt()
+    {
+        CurrentView = "Debt";
+    }
+
+    private void ShowTransactions()
+    {
+        CurrentView = "Transactions";
+    }
+
+    private void Logout()
+    {
+        UserService.Logout();  // Clear the current user
+        NavigationManager.NavigateTo("/login");  // Redirect to login page
+    }
+}

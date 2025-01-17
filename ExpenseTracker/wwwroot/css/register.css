@@ -1,0 +1,91 @@
+/* Container styling */
+.register-container {
+    width: 100%;
+    max-width: 450px; /* Increased max-width for more space */
+    margin: 60px auto; /* Adjusted margin for more spacing */
+    padding: 30px; /* Increased padding for a spacious feel */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f9f9f9); /* Light gradient */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated font */
+}
+
+    /* Heading */
+    .register-container h3 {
+        font-size: 30px; /* Increased font size */
+        margin-bottom: 30px; /* More space below the heading */
+        color: #2e3e1b; /* Forest green color */
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Input fields */
+    .register-container input,
+    .register-container select {
+        width: 100%;
+        padding: 15px; /* Increased padding for easier typing */
+        margin: 15px 0; /* More space between inputs */
+        border: 2px solid #c0d9c8; /* Soft green border */
+        border-radius: 6px;
+        font-size: 18px; /* Larger font size for readability */
+        transition: all 0.3s ease;
+    }
+
+        .register-container input:focus,
+        .register-container select:focus {
+            border-color: #2e8b57; /* Forest green focus */
+            outline: none;
+            box-shadow: 0 0 5px rgba(46, 139, 87, 0.5); /* Green glow effect */
+        }
+
+    /* Button */
+    .register-container button {
+        width: 100%;
+        padding: 15px; /* Increased padding for better button appearance */
+        background: linear-gradient(90deg, #2e8b57, #1e693d); /* Forest green gradient */
+        border: none;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 20px; /* Increased font size for better visibility */
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .register-container button:hover {
+            background: linear-gradient(90deg, #1e693d, #155e2b); /* Darker forest green gradient on hover */
+        }
+
+    /* Message styling */
+    .register-container p {
+        margin-top: 20px; /* Increased space above messages */
+        font-size: 16px; /* Larger font size for easier reading */
+        color: #555;
+    }
+
+        .register-container p.success {
+            color: #2e8b57; /* Forest green for success */
+            font-weight: 600;
+        }
+
+        .register-container p.error {
+            color: #f44336; /* Red for error */
+            font-weight: 600;
+        }
+
+    /* Link for login */
+    .register-container a {
+        color: #2e8b57; /* Forest green */
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 16px; /* Larger link text for better readability */
+        transition: color 0.3s ease;
+    }
+
+        .register-container a:hover {
+            color: #155e2b; /* Darker green for hover */
+            text-decoration: underline;
+        }

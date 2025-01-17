@@ -1,0 +1,99 @@
+/* Container styling */
+.landing-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 100px auto;
+    padding: 25px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif; /* Changed font to Roboto */
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #91c788; /* Light green border */
+}
+
+    /* Heading */
+    .landing-container h1 {
+        font-size: 38px;
+        margin-bottom: 20px;
+        color: #2e3e1b; /* Forest green */
+        font-weight: 700;
+    }
+
+    /* Paragraph */
+    .landing-container p {
+        font-size: 19px;
+        margin-bottom: 35px;
+        color: #4d6043; /* Subtle greenish-gray for text */
+        line-height: 1.7;
+        font-weight: 400;
+    }
+
+    /* Buttons */
+    .landing-container button {
+        width: 150px;
+        padding: 15px;
+        margin: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        color: white;
+        background-color: #2e8b57; /* Forest green */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 5px 10px rgba(46, 139, 87, 0.2);
+    }
+
+        .landing-container button:hover {
+            background-color: #1e693d; /* Darker green on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+            box-shadow: 0 8px 15px rgba(46, 139, 87, 0.4);
+        }
+
+        .landing-container button:active {
+            background-color: #166533; /* Slightly darker green when clicked */
+            transform: translateY(2px); /* Press effect */
+            box-shadow: none;
+        }
+
+/* Optional: Add responsive behavior */
+@media (max-width: 768px) {
+    .landing-container {
+        padding: 20px;
+        max-width: 550px;
+    }
+
+        .landing-container h1 {
+            font-size: 32px;
+        }
+
+        .landing-container p {
+            font-size: 17px;
+        }
+
+        .landing-container button {
+            width: 120px;
+            font-size: 16px;
+        }
+}
+
+@media (max-width: 480px) {
+    .landing-container {
+        max-width: 100%;
+        margin: 60px auto;
+    }
+
+        .landing-container h1 {
+            font-size: 28px;
+        }
+
+        .landing-container p {
+            font-size: 16px;
+        }
+
+        .landing-container button {
+            width: 110px;
+            font-size: 14px;
+        }
+}

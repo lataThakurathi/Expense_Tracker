@@ -1,0 +1,72 @@
+@page "/home"
+@using ExpenseTracker.Services
+@inject UserService UserService
+@inject NavigationManager NavigationManager
+
+<link href="css/home.css" rel="stylesheet" />
+
+<div class="home-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>My Dashboard</h3>
+        <ul>
+            <li><button class="nav-button @(CurrentView == "Home" ? "active" : "")" @onclick="ShowHome">Home</button></li>
+            <li><button class="nav-button @(CurrentView == "Dashboard" ? "active" : "")" @onclick="ShowDashboard">Dashboard</button></li>
+            <li><button class="nav-button @(CurrentView == "CashInFlow" ? "active" : "")" @onclick="ShowCashInFlow">Cash In Flow</button></li>
+            <li><button class="nav-button @(CurrentView == "CashOutFlow" ? "active" : "")" @onclick="ShowCashOutFlow">Cash Out Flow</button></li>
+            <li><button class="logout-btn" @onclick="Logout">Logout</button></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content-area">
+        @if (CurrentView == "Home")
+        {
+            <h2>Welcome, to Expense Tracker!</h2>
+         
+        }
+        else if (CurrentView == "Dashboard")
+        {
+            <h2>Dashboard</h2>
+            <p>This is the main dashboard area. More features will be added soon.</p>
+        }
+        else if (CurrentView == "CashInFlow")
+        {
+            <Pages.CashInFlowPage />
+        }
+        else if (CurrentView == "CashOutFlow")
+        {
+            <Pages.CashOutFlowPage />
+        }
+    </div>
+</div>
+
+@code {
+    private string CurrentView = "Home";
+
+    private void ShowHome()
+    {
+        CurrentView = "Home";
+    }
+
+    private void ShowDashboard()
+    {
+        CurrentView = "Dashboard";
+    }
+
+    private void ShowCashInFlow()
+    {
+        CurrentView = "CashInFlow";
+    }
+
+    private void ShowCashOutFlow()
+    {
+        CurrentView = "CashOutFlow";
+    }
+
+    private void Logout()
+    {
+        UserService.Logout();  // Clear the current user
+        NavigationManager.NavigateTo("/login");  // Redirect to login page
+    }
+}
